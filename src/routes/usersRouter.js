@@ -8,11 +8,11 @@ router.get("/",(req,res)=>{
     usersViewController.getAll(req,res);
 });
 
+router.get("/new",usersViewController.createForm);
+
 router.get("/:id",(req,res)=>{
     usersViewController.getById(req,res);
 });
-
-router.get("/new",usersViewController.createForm);
 
 router.post("/",(req,res)=>{
     usersViewController.create(req,res);
