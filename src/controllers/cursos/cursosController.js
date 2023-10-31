@@ -22,27 +22,26 @@ const create = (nombre_curso, fecha_curso, id_profe) => {
         id_profe : id_profe
     };
     /////HAMEN ZER??? INSERT VALUES....??
-    cursos.push(user);
-    return [null, user];
+    cursos.push(curso);
+    return [null, curso];
 }
 
-const update = (nombre_curso, fecha_curso, id_profe, email) => {
+const update = (id, nombre_curso, fecha_curso, id_profe) => {
 
     if (id === undefined) {
         const error = "Tienes que especificar un ID válido";
         return [error, null];
     }
-    if (nombre_curso === undefined || fecha_curso === undefined || id_profe === undefined || email === undefined) {
-        const error = "nombre_curso, fecha_curso y email deben ser definidos";
+    if (nombre_curso === undefined || fecha_curso === undefined || id_profe === undefined) {
+        const error = "nombre_curso, fecha_curso y id_profe deben ser definidos";
         return [error, null];
     }
     try {
-        const user = cursos.find(element => element.id == id);
-        user.nombre_curso = nombre_curso;
-        user.fecha_curso = fecha_curso;
-        user.id_profe = id_profe;
-        user.email = email;
-        return [null, user];
+        const curso = cursos.find(element => element.id_curso == id);
+        curso.nombre_curso = nombre_curso;
+        curso.fecha_curso = fecha_curso;
+        curso.id_profe = id_profe;
+        return [null, curso];
     }
     catch (e) {
         return [e.message, null];

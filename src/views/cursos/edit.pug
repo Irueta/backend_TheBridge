@@ -1,0 +1,27 @@
+title Edición de cursos lectivos 
+    script(type="/index.js")
+    link(rel="stylesheet", href="style.css")
+
+      h2 Introduce contenido del curso 
+      form(action="/cursos/editar", method="post")
+        .form-group
+          label(for="nombre") Nombre del Curso
+          input#nombre.form-control(type="text", name="nombre", placeholder="Nombre del Curso", value="Curso de Full Stack")
+          .form-group
+            label(for="fecha") Edición del Curso
+          input#fecha.form-control(type="date", name="fecha", placeholder="fecha", value="edicion")
+          label(for="rol") Profesor:
+          select#profesor.form-control(name="profesor")
+            option(value="1") Nombre1
+            option(value="2") Nombre2 
+        .form-group
+          label(for="descripcion") Descripción
+          textarea#descripcion.form-control(name="descripcion", rows="2", placeholder="Descripción del Curso") Curso de Full Stack Developer 
+        .form-group
+        label(for="nombre") Nombre:
+        input(type="text", name="nombre", id="nombre" value=user.nombre)
+        label(for="primer_apellido") Primer apellido:
+        input(type="text", name="primer_apellido", id="primer_apellido", value=user.primer_apellido )
+        label(for="segundo_apellido") Segundo apellido:
+        input(type="text", name="segundo_apellido", id="segundo_apellido", value=user.segundo_apellido )
+        button.btn.btn-primary(type="submit") Guardar cambios

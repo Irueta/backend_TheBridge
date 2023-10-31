@@ -7,8 +7,8 @@ import cursosController from "./cursosController.js";
 
 const getById = (req,res) =>{
     const id = req.params.id;
-    const [error,user] = cursosController.getById(id);
-    res.render("cursos/show",{error,user});   
+    const [error,curso] = cursosController.getById(id);
+    res.render("cursos/show",{error,curso});   
 }
 
 const createForm = (req,res)=>{
