@@ -27,7 +27,7 @@ CREATE TABLE IF NOT EXISTS `BBK_The_Bridge`.`usuarios` (
   `segundo_apellido` VARCHAR(45) NULL,
   `email` VARCHAR(45) NOT NULL,
   `role` INT UNSIGNED NULL,
-  `password` VARCHAR(45) NULL,
+  `password` VARCHAR(100) NULL,
   PRIMARY KEY (`id_usuario`),
   UNIQUE INDEX `idAlumnos_UNIQUE` (`id_usuario` ASC) VISIBLE,
   UNIQUE INDEX `email_UNIQUE` (`email` ASC) VISIBLE)
