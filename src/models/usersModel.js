@@ -20,8 +20,8 @@ const findByPk = async (pk) =>{
 }
 
 const update = async(data,pk) =>{
-    let queryString = "UPDATE usuarios SET nombre=?, nombre=?, primer_apellido=?, segundo_apellido=?, email=?, role=?, password=?, nombre=?, WHERE id_usuario=?;";
-    const [rows,fields] = await connection.query(queryString,[data.tipo,data.peso,pk]);
+    let queryString = "UPDATE usuarios SET nombre=?, primer_apellido=?, segundo_apellido=?, email=?, role=?, password=?, WHERE id_usuario=?;";
+    const [rows,fields] = await connection.query(queryString,[data.nombre,data.primer_apellido,data.segundo_apellido,data.email,data.role,data.password,pk]);
     console.log("rows",rows);
     console.log("fields",fields);
     return rows;

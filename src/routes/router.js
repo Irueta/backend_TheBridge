@@ -6,7 +6,7 @@ import cursosRouter from "./cursosRouter.js";
 const router = Router();
 
 router.use("/users",usersRouter);
- router.use ("/cursos", cursosRouter)
+router.use("/cursos", cursosRouter);
 
 
 export default router;

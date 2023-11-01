@@ -1,7 +1,7 @@
 extends ../layout
 
 block content 
-    h1 Login 
+    h1 Login
     if error 
         p(class="error")= error
     form(action="/login", method="post") 

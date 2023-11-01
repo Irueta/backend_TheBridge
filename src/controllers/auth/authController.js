@@ -1,12 +1,7 @@
-import jwt from "jsonwebtoken";
+
 import bcrypt from "bcrypt";
 import usersModel from "../../models/usersModel.js";
 
-/* const loginApi = (req,res)=>{
-    const {username,password} = req.query;
-    const token = jwt.sign({user:username},process.env.JSON_SECRET,{expiresIn:"10m"});
-    res.json({token});
-}  */
 
 const login = async(req,res)=>{
     const {email,password} = req.body;
@@ -18,8 +13,8 @@ const login = async(req,res)=>{
         const hash = user.password;
 
         if(await bcrypt.compare(password,hash)){
-            req.session.user = user.usuario_id;
-            req.session.rol = user.rol;
+            req.session.user = user.id_usuario;
+            req.session.rol = user.role;
         }
     }
     catch(e){
@@ -57,7 +52,7 @@ const register = async(req,res) =>{
         const hash = await bcrypt.hash(password,10);
         const newUser = usersModel.create({email:email,password:hash});
         req.session.user=newUser.email;
-        req.session.rol=newUser.rol;
+        req.session.rol=newUser.role;
         res.redirect("/login");
     }
     catch(e){
