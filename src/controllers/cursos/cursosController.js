@@ -36,7 +36,7 @@ const create = async (nombre_curso, fecha_curso, id_profe) => {
         return [error, null];
     }
     try{
-    const curso = await cursoModel.create({nombre_curso,fecha_curso,id_profe})   /////HAMEN ZER??? INSERT VALUES....??
+    const curso = await cursoModel.create({nombre_curso,fecha_curso,id_profe})
     return [null, curso];
     }
 
@@ -46,7 +46,7 @@ const create = async (nombre_curso, fecha_curso, id_profe) => {
 }
 
 
-const update = async (id, nombre_curso, fecha_curso, id_profe) => {
+const update = async (id,nombre_curso,fecha_curso,id_profe) => {
 
     if (id == undefined) {
         const error = "Tienes que especificar un ID válido";

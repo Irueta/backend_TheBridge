@@ -12,5 +12,6 @@ const connection = await mysql.createConnection(
         database: process.env.MYSQL_DATABASE
     }
 );
-
+//COMENTO LA CONEXION PORQUE VEO QUE SE ME CONECTA
 export default connection;
+
