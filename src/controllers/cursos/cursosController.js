@@ -1,4 +1,4 @@
-import cursoModel from "../../models/aceitunasModel.js";
+import cursoModel from "../../models/cursoModel.js";
 import {Op} from "sequelize"
  
     
@@ -31,7 +31,7 @@ const getById = async (id) => {
 
 
 const create = async (nombre_curso, fecha_curso, id_profe) => {
-    if (nombre_curso === undefined || fecha_curso === undefined || id_profe === undefined) {
+    if (nombre_curso == undefined || fecha_curso == undefined || id_profe == undefined) {
         const error = "nombre_curso, fecha_curso y id_profe deben ser definidos";
         return [error, null];
     }
@@ -52,7 +52,7 @@ const update = async (id, nombre_curso, fecha_curso, id_profe) => {
         const error = "Tienes que especificar un ID válido";
         return [error, null];
     }
-    if (nombre_curso === undefined || fecha_curso === undefined || id_profe === undefined) {
+    if (nombre_curso == undefined || fecha_curso == undefined || id_profe == undefined) {
         const error = "nombre_curso, fecha_curso y id_profe deben ser definidos";
         return [error, null];
     }
@@ -87,7 +87,7 @@ const remove = async (id) => {
 }
 
 
-export {
+export default {
     getAll,
     getById,
     create,
